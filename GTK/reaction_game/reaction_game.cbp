@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="reaction_game" />
+		<Option pch_mode="2" />
+		<Option compiler="win_gcc64" />
+		<Option extended_obj_names="1" />
+		<Build>
+			<Target title="win_gcc64">
+				<Option output="bin/win_gcc64/reaction_game" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/win_gcc64/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Option projectResourceIncludeDirsRelation="-1" />
+				<Compiler>
+					<Add option="-std=c++1z" />
+					<Add option="`pkg-config --cflags gtk+-3.0 glib-2.0`" />
+				</Compiler>
+				<Linker>
+					<Add option="`pkg-config --libs gtk+-3.0 glib-2.0`" />
+				</Linker>
+				<MakeCommands>
+					<Build command="" />
+					<CompileFile command="" />
+					<Clean command="" />
+					<DistClean command="" />
+					<AskRebuildNeeded command="" />
+					<SilentBuild command=" &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="_app" />
+		</Compiler>
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
