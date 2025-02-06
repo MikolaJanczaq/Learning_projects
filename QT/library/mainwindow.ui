@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>602</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Ustawienia ogólne */
+QWidget {
+    background-color: #f0f0f0; /* Tło okna */
+    color: #2d2d2d; /* Kolor tekstu */
+    font-family: &quot;Arial&quot;, sans-serif; /* Rodzaj czcionki */
+    font-size: 12pt; /* Rozmiar czcionki */
+}
+
+/* Przycisk */
+QPushButton {
+    background-color: #4CAF50; /* Zielony przycisk */
+    color: white; /* Biały tekst */
+    border: 1px solid #388E3C; /* Obramowanie */
+    border-radius: 4px;
+    font-family: &quot;Arial&quot;, sans-serif; /* Rodzaj czcionki */
+    font-size: 10pt; /* Rozmiar czcionki */
+}
+
+QPushButton:hover {
+    background-color: #45a049; /* Jaśniejszy zielony przy najechaniu */
+}
+
+QPushButton:pressed {
+    background-color: #2e7d32; /* Ciemniejszy zielony przy kliknięciu */
+}
+
+/* Przycisk Delete (czerwony) */
+QPushButton#pushButton_delBook, QPushButton#pushButton_delPerson {
+    background-color: #e74c3c; /* Czerwony przycisk */
+    color: white; /* Biały tekst */
+    border: 1px solid #c0392b; /* Ciemniejsze czerwone obramowanie */
+    border-radius: 4px;
+    font-family: &quot;Arial&quot;, sans-serif; /* Rodzaj czcionki */
+    font-size: 10pt; /* Rozmiar czcionki */
+}
+
+QPushButton#pushButton_delBook:hover, QPushButton#pushButton_delPerson:hover {
+    background-color: #c0392b; /* Ciemniejszy czerwony przy najechaniu */
+}
+
+QPushButton#pushButton_delBook:pressed, QPushButton#pushButton_delPerson:pressed {
+    background-color: #e74c3c; /* Jaśniejszy czerwony przy kliknięciu */
+}
+
+/* Przycisk Return (czerwony) */
+QPushButton#pushButton_return {
+    background-color: #e74c3c; /* Czerwony przycisk */
+    color: white; /* Biały tekst */
+    border: 1px solid #c0392b; /* Ciemniejsze czerwone obramowanie */
+    border-radius: 4px;
+    font-family: &quot;Arial&quot;, sans-serif; /* Rodzaj czcionki */
+    font-size: 10pt; /* Rozmiar czcionki */
+}
+
+QPushButton#pushButton_return:hover {
+    background-color: #c0392b; /* Ciemniejszy czerwony przy najechaniu */
+}
+
+QPushButton#pushButton_return:pressed {
+    background-color: #e74c3c; /* Jaśniejszy czerwony przy kliknięciu */
+}
+
+/* Tabela */
+QTableView {
+    background-color: #ffffff; /* Białe tło tabeli */
+    alternate-background-color: #f9f9f9; /* Naprzemienny kolor wierszy */
+    gridline-color: #dcdcdc; /* Kolor siatki */
+    color: #2d2d2d; /* Kolor tekstu */
+    font-family: &quot;Arial&quot;, sans-serif; /* Rodzaj czcionki */
+    font-size: 11pt; /* Rozmiar czcionki */
+}
+
+QHeaderView::section {
+    background-color: #d3d3d3; /* Tło nagłówków tabeli */
+    color: #2d2d2d; /* Tekst nagłówków */
+    border: 1px solid #b0b0b0; /* Obramowanie nagłówków */
+    font-family: &quot;Arial&quot;, sans-serif; /* Rodzaj czcionki */
+    font-size: 12pt; /* Rozmiar czcionki */
+}
+
+/* Pole tekstowe */
+QLineEdit {
+    background-color: #ffffff; /* Białe tło pola tekstowego */
+    color: #2d2d2d; /* Tekst pola */
+    border: 1px solid #b0b0b0; /* Obramowanie */
+    border-radius: 4px;
+    font-family: &quot;Arial&quot;, sans-serif; /* Rodzaj czcionki */
+    font-size: 11pt; /* Rozmiar czcionki */
+}
+
+/* Lista */
+QListView, QTreeView {
+    background-color: #ffffff; /* Białe tło listy/drzewa */
+    color: #2d2d2d; /* Kolor tekstu */
+    alternate-background-color: #f9f9f9; /* Naprzemienny kolor wierszy */
+    font-family: &quot;Arial&quot;, sans-serif; /* Rodzaj czcionki */
+    font-size: 11pt; /* Rozmiar czcionki */
+}
+
+QListView::item:hover, QTreeView::item:hover {
+    background-color: #e0e0e0; /* Szare tło przy najechaniu */
+}
+
+/* Menu */
+QMenuBar {
+    background-color: #eaeaea; /* Tło menu */
+    color: #2d2d2d; /* Kolor tekstu */
+    font-family: &quot;Arial&quot;, sans-serif; /* Rodzaj czcionki */
+    font-size: 12pt; /* Rozmiar czcionki */
+}
+
+QMenu {
+    background-color: #ffffff; /* Tło rozwijanego menu */
+    color: #2d2d2d; /* Tekst menu */
+    font-family: &quot;Arial&quot;, sans-serif; /* Rodzaj czcionki */
+    font-size: 11pt; /* Rozmiar czcionki */
+}
+
+QMenu::item:selected {
+    background-color: #dcdcdc; /* Szary kolor zaznaczenia */
+}
+
+/* Pasek stanu */
+QStatusBar {
+    background-color: #eaeaea; /* Tło paska stanu */
+    color: #2d2d2d; /* Tekst paska stanu */
+    font-family: &quot;Arial&quot;, sans-serif; /* Rodzaj czcionki */
+    font-size: 10pt; /* Rozmiar czcionki */
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableView" name="tableView_books">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>390</width>
+      <height>200</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView_rents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>280</y>
+      <width>600</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView_people">
+    <property name="geometry">
+     <rect>
+      <x>392</x>
+      <y>20</y>
+      <width>208</width>
+      <height>200</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_books">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Books</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_rents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>260</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Rents</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_people">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>0</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>People</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_addBook">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>225</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add book</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_delBook">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>225</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete book</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_rent">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>475</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Rent</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_return">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>475</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Return</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_addPerson">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>225</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add person</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_delPerso">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>225</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete person</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>602</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
